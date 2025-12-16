@@ -7,6 +7,7 @@
 
 header {
     background-color: #34495e;
+    font-size: 150%;
     color: white;
     text-align: center;
     padding: 20px;
@@ -28,6 +29,7 @@ nav ul li {
 
 nav ul li a {
     color: white;
+    font-size: 200%;
     text-decoration: none;
     padding: 15px 10px;
     display: block;
