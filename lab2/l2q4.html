@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Even Numbers Sum</title></head>
+<body>
+  <h2>Sum of Even Numbers (1 to 25)</h2>
+  <button onclick="findEvenSum()">Compute</button>
+  <div id="result" style="margin-top:15px;font-size:16px;"></div>
+  <script>
+    function findEvenSum() {
+      let total = 0, evenList = [];
+      for (let n = 1; n <= 25; n++) {
+        if (n % 2 === 0) { total += n; evenList.push(n); }
+      }
+      document.getElementById("result").innerHTML =
+        "<strong>Even numbers:</strong> " + evenList.join(", ") +
+        "<br><strong>Total Sum:</strong> " + total;
+    }
+  </script>
+</body>
+</html>
+

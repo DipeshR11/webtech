@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><title>Array and forEach</title></head>
+<body>
+  <h2>Array and forEach Demo</h2>
+  <button onclick="runDemo()">Run Demo</button>
+  <div id="output" style="font-family:monospace;margin-top:15px;"></div>
+  <script>
+    function runDemo() {
+      let colors  = ["Red", "Green", "Blue", "Yellow", "Orange"];
+      let scores  = [55, 72, 88, 43, 91, 67, 59];
+      let out = "<strong>Colors:</strong><br>";
+      colors.forEach((c, i) => out += "Index " + i + ": " + c + "<br>");
+      let total = 0;
+      out += "<br><strong>Scores:</strong><br>";
+      scores.forEach(s => { total += s; out += s + " "; });
+      out += "<br>Total = " + total + "<br>Average = " + (total / scores.length).toFixed(2);
+      document.getElementById("output").innerHTML = out;
+    }
+  </script>
+</body>
+</html>

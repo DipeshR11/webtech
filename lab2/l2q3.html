@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Current Date & Time</title>
+  <style>.clock { font-size: 26px; font-family: monospace; color: #004d40; margin: 20px; }</style>
+</head>
+<body>
+  <h2>Live Date and Time</h2>
+  <div class="clock" id="datetime"></div>
+  <script>
+    function update() {
+      let d = new Date();
+      let date = String(d.getDate()).padStart(2,"0") + "/" +
+                 String(d.getMonth()+1).padStart(2,"0") + "/" + d.getFullYear();
+      let time = String(d.getHours()).padStart(2,"0") + ":" +
+                 String(d.getMinutes()).padStart(2,"0") + ":" +
+                 String(d.getSeconds()).padStart(2,"0");
+      document.getElementById("datetime").innerHTML = "Date: " + date + "<br>Time: " + time;
+    }
+    update();
+    setInterval(update, 1000);
+  </script>
+</body>
+</html>

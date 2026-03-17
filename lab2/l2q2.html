@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Sum Calculator</title></head>
+<body>
+  <h2>Add Two Numbers</h2>
+  <button onclick="addNumbers()">Enter Numbers</button>
+  <p id="ans"></p>
+  <script>
+    function addNumbers() {
+      let x = parseFloat(prompt("Enter first number:"));
+      let y = parseFloat(prompt("Enter second number:"));
+      if (isNaN(x) || isNaN(y)) {
+        document.getElementById("ans").innerHTML = "Please enter valid numbers!";
+      } else {
+        document.getElementById("ans").innerHTML =
+          x + " + " + y + " = <strong>" + (x + y) + "</strong>";
+      }
+    }
+  </script>
+</body>
+</html>

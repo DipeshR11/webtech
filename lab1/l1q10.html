@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <style>
+    body { font-family: Arial; background: #e8f5e9; display: flex; justify-content: center; padding: 30px; }
+    .box { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.2); width: 500px; }
+    h2 { text-align: center; color: #1b5e20; }
+    .fg { margin-bottom: 15px; }
+    label { display: block; font-weight: bold; margin-bottom: 5px; }
+    input[type="text"], input[type="email"], input[type="password"],
+    input[type="date"], select, textarea {
+      width: 100%; padding: 8px; border: 1px solid #ccc;
+      border-radius: 4px; font-size: 14px; box-sizing: border-box;
+    }
+    input[type="submit"] {
+      width: 100%; background: #388e3c; color: white; padding: 10px;
+      border: none; border-radius: 4px; font-size: 16px; cursor: pointer;
+    }
+    input[type="submit"]:hover { background: #1b5e20; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Student Registration</h2>
+    <form action="#" method="post">
+      <div class="fg">
+        <label>Full Name:</label>
+        <input type="text" name="fullname" placeholder="Enter full name" required>
+      </div>
+      <div class="fg">
+        <label>Email:</label>
+        <input type="email" name="email" placeholder="Enter email" required>
+      </div>
+      <div class="fg">
+        <label>Password:</label>
+        <input type="password" name="password" placeholder="Create password" required>
+      </div>
+      <div class="fg">
+        <label>Date of Birth:</label>
+        <input type="date" name="dob">
+      </div>
+      <div class="fg">
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="male"> Male &nbsp;
+        <input type="radio" name="gender" value="female"> Female &nbsp;
+        <input type="radio" name="gender" value="other"> Other
+      </div>
+      <div class="fg">
+        <label>City:</label>
+        <select name="city">
+          <option value="">-- Select --</option>
+          <option>Kathmandu</option><option>Pokhara</option><option>Biratnagar</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Interests:</label>
+        <input type="checkbox" name="interests" value="gaming"> Gaming &nbsp;
+        <input type="checkbox" name="interests" value="sports"> Sports &nbsp;
+        <input type="checkbox" name="interests" value="cooking"> Cooking
+      </div>
+      <div class="fg">
+        <label>Address:</label>
+        <textarea name="address" rows="3" placeholder="Enter address"></textarea>
+      </div>
+      <div class="fg"><input type="submit" value="Register Now"></div>
+    </form>
+  </div>
+</body>
+</html>
+

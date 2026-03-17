@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mark Sheet</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    .sheet { width: 620px; margin: auto; border: 2px solid #333; padding: 25px; }
+    h2, h3 { text-align: center; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th { background: #0055a5; color: white; padding: 10px; }
+    td { padding: 8px 10px; border: 1px solid #ccc; text-align: center; }
+    tr:nth-child(even) { background: #f5f5f5; }
+    .total { background: #dbeafe; font-weight: bold; }
+    .result { text-align: center; margin-top: 15px; font-size: 18px; color: green; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <h2>XYZ Institute of Technology</h2>
+    <h3>Mark Sheet — 2024</h3>
+    <hr>
+    <p><strong>Name:</strong> Anita Gurung &nbsp;&nbsp; <strong>Roll No:</strong> 4021</p>
+    <p><strong>Program:</strong> BIT &nbsp;&nbsp; <strong>Semester:</strong> 5th</p>
+    <table>
+      <tr><th>S.N.</th><th>Subject</th><th>Full Marks</th><th>Pass Marks</th><th>Obtained</th><th>Grade</th></tr>
+      <tr><td>1</td><td>Network Security</td><td>100</td><td>40</td><td>80</td><td>A</td></tr>
+      <tr><td>2</td><td>Cloud Computing</td><td>100</td><td>40</td><td>74</td><td>B+</td></tr>
+      <tr><td>3</td><td>Mobile App Development</td><td>100</td><td>40</td><td>68</td><td>B</td></tr>
+      <tr><td>4</td><td>Software Engineering</td><td>100</td><td>40</td><td>88</td><td>A+</td></tr>
+      <tr><td>5</td><td>Database Systems</td><td>100</td><td>40</td><td>70</td><td>B</td></tr>
+      <tr class="total"><td colspan="4">Total</td><td>380 / 500</td><td>B+</td></tr>
+    </table>
+    <p class="result">RESULT: PASSED &nbsp;|&nbsp; Percentage: 76%</p>
+  </div>
+</body>
+</html>

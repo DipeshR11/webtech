@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation</title>
+  <style>
+    body { font-family: Arial; padding: 30px; }
+    .fg { margin: 12px 0; }
+    input { padding: 8px; width: 300px; border: 1px solid #ccc; border-radius: 4px; }
+    .err { color: red; font-size: 13px; display: block; }
+    .ok  { color: green; font-size: 15px; font-weight: bold; }
+    button { padding: 10px 25px; background: #388e3c; color: white; border: none; border-radius: 4px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h2>Student Registration — Validation</h2>
+  <form onsubmit="return checkForm()">
+    <div class="fg"><label>Username:</label><br>
+      <input type="text" id="u"><span class="err" id="ue"></span></div>
+    <div class="fg"><label>Email:</label><br>
+      <input type="text" id="e"><span class="err" id="ee"></span></div>
+    <div class="fg"><label>Password:</label><br>
+      <input type="password" id="p"><span class="err" id="pe"></span></div>
+    <div class="fg"><label>Age:</label><br>
+      <input type="text" id="a"><span class="err" id="ae"></span></div>
+    <div class="fg"><button type="submit">Submit</button></div>
+    <p class="ok" id="ok"></p>
+  </form>
+  <script>
+    function checkForm() {
+      let valid = true;
+      ["ue","ee","pe","ae","ok"].forEach(id => document.getElementById(id).innerText = "");
+      let u = document.getElementById("u").value.trim();
+      let e = document.getElementById("e").value.trim();
+      let p = document.getElementById("p").value;
+      let a = document.getElementById("a").value.trim();
+      if (!u || u.length < 3) { document.getElementById("ue").innerText = "Minimum 3 characters required."; valid = false; }
+      if (!(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e))) { document.getElementById("ee").innerText = "Invalid email address."; valid = false; }
+      if (p.length < 6) { document.getElementById("pe").innerText = "Password must be at least 6 characters."; valid = false; }
+      if (!a || isNaN(a) || a < 1 || a > 120) { document.getElementById("ae").innerText = "Please enter a valid age."; valid = false; }
+      if (valid) document.getElementById("ok").innerText = "Form Submitted Successfully!";
+      return false;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Dropdown</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+    body { font-family: Arial; padding: 25px; }
+    select { padding: 8px; font-size: 16px; }
+    button { padding: 8px 15px; background: #0288d1; color: white; border: none; border-radius: 4px; cursor: pointer; margin-left: 10px; }
+    #display { margin-top: 20px; font-size: 16px; background: #e1f5fe; padding: 10px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h2>Dropdown with jQuery</h2>
+  <select id="techSelect">
+    <option value="nodejs">Node.js</option>
+    <option value="django">Django</option>
+    <option value="laravel">Laravel</option>
+    <option value="flask">Flask</option>
+    <option value="spring">Spring Boot</option>
+  </select>
+  <button id="getBtn">Get Selection</button>
+  <div id="display"></div>
+  <script>
+    $(function() {
+      $("#getBtn").click(function() {
+        let val  = $("#techSelect").val();
+        let text = $("#techSelect option:selected").text();
+        $("#display").html("<strong>Value:</strong> " + val + "<br><strong>Text:</strong> " + text);
+      });
+      $("#techSelect").change(function() {
+        $("#display").html("<strong>Value:</strong> " + $(this).val() + "<br><strong>Text:</strong> " + $(this).find("option:selected").text());
+      });
+    });
+  </script>
+</body>
+</html>

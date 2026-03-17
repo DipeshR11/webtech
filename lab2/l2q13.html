@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sequential Animation</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+    body { font-family: Arial; padding: 25px; }
+    #shape { width: 100px; height: 100px; background: #1565c0; border-radius: 8px; opacity: 1;
+             display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; }
+    button { padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; color: white; margin: 5px; }
+    #btnAnim { background: #0288d1; } #btnReset { background: #546e7a; }
+  </style>
+</head>
+<body>
+  <h2>Sequential Animation Demo</h2>
+  <button id="btnAnim">Animate</button>
+  <button id="btnReset">Reset</button><br><br>
+  <div id="shape">Animate Me</div>
+  <script>
+    $(function() {
+      $("#btnAnim").click(function() {
+$("#shape").animate({width:"320px"},700).animate({height:"180px"},700).animate({opacity:0.2},700);
+      });
+      $("#btnReset").click(function() {
+        $("#shape").stop(true).animate({width:"100px",height:"100px",opacity:1},500);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Layout</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Verdana; }
+    #header  { background: #1565c0; color: white; text-align: center; padding: 15px; }
+    #nav     { background: #90caf9; padding: 10px; text-align: center; height: 60px; }
+    #container { display: flex; min-height: 200px; }
+    #left    { background: #b0bec5; width: 25%; padding: 10px; }
+    #main    { background: #a5d6a7; width: 50%; padding: 10px; }
+    #right   { background: #ffe082; width: 25%; padding: 10px; }
+    #footer  { background: #37474f; color: white; text-align: center; padding: 10px; }
+  </style>
+</head>
+<body>
+  <div id="header">Page Header</div>
+  <div id="nav">Navigation Bar</div>
+  <div id="container">
+    <div id="left">Left Panel</div>
+    <div id="main">Main Content</div>
+    <div id="right">Right Panel</div>
+  </div>
+  <div id="footer">Page Footer</div>
+</body>
+</html>

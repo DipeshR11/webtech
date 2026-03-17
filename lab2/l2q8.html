@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cookie Handler</title>
+  <style>
+    body { font-family: Arial; padding: 25px; }
+    input { padding: 7px; margin: 4px; border: 1px solid #ccc; border-radius: 4px; }
+    button { padding: 7px 14px; border: none; border-radius: 4px; cursor: pointer; color: white; margin: 4px; }
+    .bset { background: #0288d1; } .bget { background: #2e7d32; } .bdel { background: #c62828; }
+    #output { margin-top: 15px; background: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; }
+  </style>
+</head>
+<body>
+  <h2>Cookie Operations</h2>
+  <div>
+    <input id="cname" placeholder="Cookie Name">
+    <input id="cvalue" placeholder="Cookie Value">
+    <input id="cdays" placeholder="Days" style="width:70px">
+    <button class="bset" onclick="setC()">Set Cookie</button>
+  </div>
+  <div>
+    <input id="gname" placeholder="Name to retrieve">
+    <button class="bget" onclick="getC()">Get Cookie</button>
+  </div>
+  <div>
+    <input id="dname" placeholder="Name to remove">
+    <button class="bdel" onclick="delC()">Delete Cookie</button>
+  </div>
+  <div id="output">Output will appear here...</div>
+  <script>
+    function setCookie(n, v, d) {
+      let exp = new Date(); exp.setTime(exp.getTime() + d*86400000);
+      document.cookie = n + "=" + encodeURIComponent(v) + "; expires=" + exp.toUTCString() + "; path=/";
+    }
+    function getCookie(n) {
+      let parts = document.cookie.split(";");
+      for (let c of parts) { c = c.trim(); if (c.startsWith(n + "=")) return decodeURIComponent(c.slice(n.length+1)); }
+      return null;
+    }
+    function deleteCookie(n) { document.cookie = n + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/"; }
+    function setC() {
+      let n = document.getElementById("cname").value, v = document.getElementById("cvalue").value,
+          d = parseInt(document.getElementById("cdays").value)||1;
+      if (!n||!v) { document.getElementById("output").innerText="Provide name and value."; return; }
+      setCookie(n,v,d); document.getElementById("output").innerText="Cookie set: "+n+" = "+v+" ("+d+" day/s)";
+    }
+    function getC() {
+      let n = document.getElementById("gname").value, val = getCookie(n);
+      document.getElementById("output").innerText = val ? n+" = "+val : n+" not found.";
+    }
+    function delC() {
+      let n = document.getElementById("dname").value;
+      if (!n) { document.getElementById("output").innerText="Enter a cookie name."; return; }
+      deleteCookie(n); document.getElementById("output").innerText="Cookie deleted: "+n;
+    }
+  </script>
+</body>
+</html>
+
+
+
